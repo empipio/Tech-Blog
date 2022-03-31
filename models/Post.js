@@ -23,6 +23,7 @@ Post.init({
     },
   },
   sequelize,
+  //timestamps true for date posted?
   timestamps: false,
   freezeTableName: true,
   underscored: true,
