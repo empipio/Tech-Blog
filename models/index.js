@@ -3,46 +3,30 @@ const Post = require("./Post");
 const Comment = require("./Comment");
 
 User.hasMany(Post, {
-  foreignkey: "user_id",
+  foreignKey: "user_id",
   onDelete: "CASCADE",
 });
 
 Post.belongsTo(User, {
-  foreignkey: "user_id",
+  foreignKey: "user_id",
 });
 
 User.hasMany(Comment, {
-  foreignkey: "user_id",
+  foreignKey: "user_id",
   onDelete: "CASCADE",
 });
 
 Comment.belongsTo(User, {
-  foreignkey: "user_id",
+  foreignKey: "user_id",
 });
 
 Post.hasMany(Comment, {
-  foreignkey: "post_id",
-  onDelete: "cascade",
+  foreignKey: "post_id",
+  onDelete: "CASCADE",
 });
 
 Comment.belongsTo(Post, {
-  foreignkey: "post_id",
+  foreignKey: "post_id",
 });
 
 module.exports = { User, Post, Comment };
-
-//PUT RELATIONSHIPS HERE
-
-/* 
-users can have many posts
-posts belong to one user
-
-users can have many comments
-comments belong to one user
-
-posts can have many comments
-comments belong to one post
-
-so all one to many/many to one?
-no many to many
-*/

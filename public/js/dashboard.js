@@ -4,8 +4,9 @@ const newFormHandler = async (event) => {
   const blogTitle = document.querySelector("#blog-name").value.trim();
   const blogText = document.querySelector("#blog-text").value.trim();
 
+  //adding a new blog post
   if (blogTitle && blogText) {
-    const response = await fetch(`/`, {
+    const response = await fetch(`/api/posts`, {
       method: "POST",
       body: JSON.stringify({ blogTitle, blogText }),
       headers: {
@@ -21,11 +22,12 @@ const newFormHandler = async (event) => {
   }
 };
 
+//deleting an existing blog post
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute("data-id")) {
     const id = event.target.getAttribute("data-id");
 
-    const response = await fetch(`/api/${id}`, {
+    const response = await fetch(`/api/posts/${id}`, {
       method: "DELETE",
     });
 

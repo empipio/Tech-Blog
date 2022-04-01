@@ -2,13 +2,7 @@ const router = require("express").Router();
 const { Comment, Post, User } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-/* 
-COMMENT ROUTES
-
-add a comment = find post by id then POST there
-
-
-*/
+//api/comments
 
 //get all comments
 router.get("/", withAuth, async (req, res) => {

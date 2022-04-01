@@ -2,6 +2,8 @@ const router = require("express").Router();
 const { Post } = require("../../models");
 const withAuth = require("../../utils/auth");
 
+//ENDPOINT api/posts
+
 //create a new blog post
 router.post("/", withAuth, async (req, res) => {
   try {
@@ -36,6 +38,30 @@ router.put("/:id", withAuth, async (req, res) => {
   }
 });
 
+//click on a blog post when logged in to read comments as well as post
+router.get("/:id", withAuth, async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+        { model: Comment, attributes: ["user_id", "comment_text"] },
+      ],
+    });
+
+    const post = postData.get({ plain: true });
+
+    res.render("post", {
+      ...post,
+      logged_in: req.session.logged_in,
+    });
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
 //only want to be able to delete own posts, think this may allow any to be deleted as long as logged in
 router.delete("/:id", withAuth, async (req, res) => {
   try {
@@ -56,13 +82,5 @@ router.delete("/:id", withAuth, async (req, res) => {
     res.status(500).json(error);
   }
 });
-
-/* 
-BLOG POST ROUTES
-
-new blog = POST
-
-delete own posts = find by id then DELETE
-*/
 
 module.exports = router;
