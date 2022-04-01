@@ -1,0 +1,17 @@
+[{
+"blog_title": "What is handlebars?",
+"blog_text": "dunno but I can ride my bike without them",
+"user_id": 1
+},
+
+{
+"blog_title": "I met a really interesting spider today",
+"blog_text": "he was a web developer",
+"user_id": 2
+},
+
+{
+"blog_title": "Why did the programmer quit his job?",
+"blog_text": "Because he didn't get arrays",
+"user_id": 3 
+}]
