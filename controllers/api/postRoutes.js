@@ -16,6 +16,26 @@ router.post("/", withAuth, async (req, res) => {
   }
 });
 
+//update post
+router.put("/:id", withAuth, async (req, res) => {
+  try {
+    const updatePost = await Post.update(
+      {
+        blog_title: req.body.blog_title,
+        blog_text: req.body.blog_text,
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    );
+    res.status(200).json(updatePost);
+  } catch (error) {
+    res.status(400).json(error);
+  }
+});
+
 //only want to be able to delete own posts, think this may allow any to be deleted as long as logged in
 router.delete("/:id", withAuth, async (req, res) => {
   try {

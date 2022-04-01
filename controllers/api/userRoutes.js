@@ -58,14 +58,5 @@ router.post("/logout", (req, res) => {
     res.status(404).end();
   }
 });
-/*
-USER ROUTES
-
-create new user = POST
-
-login = GET - find by pk or email?
-
-logout = POST - destroy req.session
-*/
 
 module.exports = router;

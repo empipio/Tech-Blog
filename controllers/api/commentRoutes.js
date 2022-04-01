@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Comment } = require("../../models");
+const { Comment, Post, User } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 /* 
@@ -10,6 +10,34 @@ add a comment = find post by id then POST there
 
 */
 
+//get all comments
+router.get("/", withAuth, async (req, res) => {
+  try {
+    const commentData = await Comment.findAll({
+      include: [{ model: Post }, { model: User, exclude: ["password"] }],
+    });
+    const comments = commentData.map((comment) => comment.get({ plain: true }));
+    res.status(200).json(comments);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
+router.get("/:id", (req, res) => {
+  try {
+    const commentData = Comment.findOne({
+      where: {
+        id: req.params.id,
+      },
+      include: [{ model: Post }, { model: User, exclude: ["password"] }],
+    });
+    const comment = commentData.map((comment) => comment.get({ plain: true }));
+    res.status(200).json(comment);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
 router.post("/", withAuth, async (req, res) => {
   try {
     const userId = req.session.user_id;
@@ -19,8 +47,8 @@ router.post("/", withAuth, async (req, res) => {
     }
     const newComment = await Comment.create({
       comment_text,
-      post_id,
-      user_id,
+      //post_id,
+      //user_id,
     });
     res.status(200).json(newComment);
   } catch (error) {
