@@ -1,21 +1,3 @@
-/\*
-GET RID OF THIS BEFORE SUBMITTING!!!
-
-app deployed to heroku but error when loading
-
-can't seed database-banging on about default values etc
-"Field 'blog_title' doesn't have a default value",
-
-struggling to test stuff because of the above
-
-ran a GET request for all posts in insomnia, database not seeded so didn't work but didn't crash...
-can create a user, hooray
-get request then works
-i think login works (get a 204)
-\*/
-
-/\*
-
 # Plan
 
 1. Presented with the homepage - with nav links - and an option to login where I get a list of posts:

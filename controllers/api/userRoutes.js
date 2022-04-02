@@ -3,16 +3,35 @@ const { User } = require("../../models");
 
 //ENDPOINT api/users
 
+//get all users
+router.get("/", async (req, res) => {
+  try {
+    const userData = await User.findAll({
+      attributes: { exclude: ["password"] },
+    });
+
+    res.status(200).json(userData);
+  } catch (error) {
+    res.status(400).json(error);
+  }
+});
+
 //SIGN UP
 router.post("/", async (req, res) => {
   try {
-    const userData = await User.create(req.body);
+    const userData = await User.create({
+      username: req.body.name,
+      email: req.body.email,
+      password: req.body.password,
+    });
+
+    const user = userData.get({ plain: true });
 
     req.session.save(() => {
-      req.session.user_id = userData.id;
+      req.session.user_id = user.id;
       req.session.logged_in = true;
 
-      res.status(200).json(userData);
+      res.status(200).json(user);
     });
   } catch (error) {
     res.status(400).json(error);
@@ -47,10 +66,9 @@ router.post("/login", async (req, res) => {
       req.session.logged_in = true;
 
       res.status(204).end();
-    });
-    return res.render("dashboard", {
-      ...user,
-      logged_in: true,
+      if (req.session.logged_in) {
+        return res.redirect("/dashboard");
+      }
     });
   } catch (error) {
     res.status(400).json(error);

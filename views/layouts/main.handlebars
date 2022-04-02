@@ -10,7 +10,7 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <link href="../../public/css/styles.css" rel="stylesheet" />
+    <link href="../../css/styles.css" rel="stylesheet" />
     <title>Welcome</title>
   </head>
   <body>
@@ -23,7 +23,7 @@
             <a class="nav-link" href="/">Home</a>
             <a class="nav-link" href="/dashboard">Dashboard</a>
             {{#if logged_in}}
-            <a class="nav-link" href="">Log Out</a>
+            <a class="nav-link" id="logout" href="/">Log Out</a>
             {{else}}
             <a class="nav-link" href="/login">Login</a>
             {{/if}}
@@ -35,7 +35,7 @@
       {{{body}}}
     </div>
     {{#if logged_in}}
-    <script src="../../public/js/logout.js"></script>
+    <script src="../../js/logout.js"></script>
     {{/if}}
   </body>
 </html>

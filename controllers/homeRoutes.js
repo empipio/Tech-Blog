@@ -27,7 +27,6 @@ router.get("/login", (req, res) => {
     res.redirect("/dashboard");
     return;
   }
-  //this was login dunno whether needs changing back
   res.render("login");
 });
 
