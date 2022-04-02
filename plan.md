@@ -4,32 +4,33 @@
 
 - Posts come back [x] Done
 - Navbar shows [x] Done
-- Logout is showing, we need this to be login (using however we do auth) [x] not done
+- Logout is showing, we need this to be login (using however we do auth) [x] done
 
 2. Clicking the homepage in the navbar, should go to the homepage
 
-- This does not work currently, none of the navbar links are hooked up [x] not done
+- This does not work currently, none of the navbar links are hooked up [x] done
 
 3. Navbar links for Dashboard and any other protected route should redirect to login if you're not logged in
 
-- Clicking navbar link should check if you're logged in. (In handlebars, not js) [x] not done
-- Dashboard needs to be hooked up properly / fix the error [x] not done
-  - Need to make sure this redirects to login [x] not done
+- Clicking navbar link should check if you're logged in. (In handlebars, not js) [x] done
+- Dashboard needs to be hooked up properly / fix the error [x] done
+  - Need to make sure this redirects to login [x] done
 
 4. Sign up page, should ask for a username and password
 
-- Currently loads up the create post page, this should load sign up [x] not done
-- When I sign up, it should save credentials and then login [] not done
-  - This is in the frontend code [] not done
+- Currently loads up the create post page, this should load sign up [x] done
+- When I sign up, it should save credentials and then login [x] done
+  - This is in the frontend code [x] not done
 
 5. Choosing a protected route like dashboard or going straight to login .. lets you login
 
-- See the above - login needs to load the login page [x] not done
+- See the above - login needs to load the login page [x] done
 
-6. When you're signed in, you should see a different nav bar, e.g. it says 'logout' not 'login' [] not done
+6. When you're signed in, you should see a different nav bar, e.g. it says 'logout' not 'login' [x] sort of done
+
 7. Loading the homepage allows you to click on the post, add a comment etc do logged in actions
 
-- Click on a post, see a post's author / date craeted etc
+- Click on a post, see a post's author / date created etc
   - See mockup
 - Must be able to leave a comment if you're logged in [] not done
 
@@ -67,7 +68,7 @@
 
 13. When you're idle on the website for X amount of time
 
-- Something in the session is invalidated / logged out [] not done - Check mini project / activities / cookies / sessions - could be already done.
+- Something in the session is invalidated / logged out [x] not done - Check mini project / activities / cookies / sessions - could be already done.
   Side note: Rejig everywhere we've used underscores on the variables.
   We've sorted:
 - Nodemon - make sure we use `npm run dev` [x] done

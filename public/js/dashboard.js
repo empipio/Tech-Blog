@@ -1,3 +1,18 @@
+//get all existing blog posts from user
+const getPosts = async () => {
+  const response = await fetch("/dashboard", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  if (response.ok) {
+    document.location.replace("/dashboard");
+  } else {
+    alert("Failed to retrieve blog posts");
+  }
+};
+
 const newFormHandler = async (event) => {
   event.preventDefault();
 

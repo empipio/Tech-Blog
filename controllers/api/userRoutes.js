@@ -66,9 +66,9 @@ router.post("/login", async (req, res) => {
       req.session.logged_in = true;
 
       res.status(204).end();
-      if (req.session.logged_in) {
-        return res.redirect("/dashboard");
-      }
+      // if (req.session.logged_in) {
+      //   return res.redirect("/dashboard");
+      // }
     });
   } catch (error) {
     res.status(400).json(error);
