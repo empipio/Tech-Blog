@@ -37,6 +37,20 @@ const newFormHandler = async (event) => {
   }
 };
 
+// const viewPost = async () => {
+//   const response = await fetch("api/posts/:id", {
+//     method: "GET",
+//     body: JSON.stringify(req.body),
+//     headers: { "Content-Type": "application/json" },
+//   });
+//   if (response.ok) {
+//     document.location.replace("/posts");
+//     } else {
+//       alert("Failed to create blog post");
+//     }
+
+// };
+
 //deleting an existing blog post
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute("data-id")) {
@@ -61,3 +75,5 @@ document
 document
   .querySelector(".post-list")
   .addEventListener("click", delButtonHandler);
+
+document.querySelector("#post-link").addEventListener("click", viewPost);

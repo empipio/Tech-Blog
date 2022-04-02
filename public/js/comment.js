@@ -10,15 +10,15 @@ form on handlebars page to leave comment
 front end js to link it up
 */
 
-const res = require("express/lib/response");
-
-const viewPost = async () => {
-  const response = await fetch("api/posts/:id", {
-    method: "GET",
-    body: JSON.stringify(req.body),
+const postComment = async () => {
+  const response = await fetch("api/comments", {
+    method: "POST",
+    body: JSON.stringify(commentText),
     headers: { "Content-Type": "application/json" },
   });
   if (response.ok) {
-    res.render("comment");
+    document.location.replace("/comment");
   }
 };
+
+document.querySelector("#add-comment").addEventListener("click", postComment);

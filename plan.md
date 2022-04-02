@@ -20,7 +20,7 @@
 
 - Currently loads up the create post page, this should load sign up [x] done
 - When I sign up, it should save credentials and then login [x] done
-  - This is in the frontend code [x] not done
+  - This is in the frontend code [x] done
 
 5. Choosing a protected route like dashboard or going straight to login .. lets you login
 

@@ -35,12 +35,12 @@ router.get("/:id", (req, res) => {
 router.post("/", withAuth, async (req, res) => {
   try {
     const userId = req.session.user_id;
-    const { post_id, comment_text } = req.body;
-    if (!user_id || !post_id || !content) {
+    const { postId, commentText } = req.body;
+    if (!userId || !postId || !commentText) {
       res.json({ message: "an error occurred!" });
     }
     const newComment = await Comment.create({
-      comment_text,
+      commentText,
       //post_id,
       //user_id,
     });
