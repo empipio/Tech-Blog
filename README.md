@@ -57,6 +57,6 @@ WHEN I am idle on the site for more than a set time
 THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments
 ```
 
-![screenshot of app homepage displaying blog posts]()
+![screenshot of app homepage displaying blog posts](/public/images/screenshot.png)
 
 The link to the deployed application is available here: https://tech-blog-empipio.herokuapp.com/
