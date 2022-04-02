@@ -14,9 +14,9 @@ router.get("/dashboard", withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
-    res.render("dashboard", {
+    return res.render("dashboard", {
       ...user,
-      logged_in: true,
+      //logged_in: true,
     });
   } catch (error) {
     res.status(500).json(error);

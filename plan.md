@@ -22,27 +22,27 @@ i think login works (get a 204)
 
 - Posts come back [x] Done
 - Navbar shows [x] Done
-- Logout is showing, we need this to be login (using however we do auth) [] not done
+- Logout is showing, we need this to be login (using however we do auth) [x] not done
 
 2. Clicking the homepage in the navbar, should go to the homepage
 
-- This does not work currently, none of the navbar links are hooked up [] not done
+- This does not work currently, none of the navbar links are hooked up [x] not done
 
 3. Navbar links for Dashboard and any other protected route should redirect to login if you're not logged in
 
-- Clicking navbar link should check if you're logged in. (In handlebars, not js) [] not done
-- Dashboard needs to be hooked up properly / fix the error [] not done
-  - Need to make sure this redirects to login [] not done
+- Clicking navbar link should check if you're logged in. (In handlebars, not js) [x] not done
+- Dashboard needs to be hooked up properly / fix the error [x] not done
+  - Need to make sure this redirects to login [x] not done
 
 4. Sign up page, should ask for a username and password
 
-- Currently loads up the create post page, this should load sign up [] not done
+- Currently loads up the create post page, this should load sign up [x] not done
 - When I sign up, it should save credentials and then login [] not done
   - This is in the frontend code [] not done
 
 5. Choosing a protected route like dashboard or going straight to login .. lets you login
 
-- See the above - login needs to load the login page [] not done
+- See the above - login needs to load the login page [x] not done
 
 6. When you're signed in, you should see a different nav bar, e.g. it says 'logout' not 'login' [] not done
 7. Loading the homepage allows you to click on the post, add a comment etc do logged in actions
@@ -79,8 +79,8 @@ i think login works (get a 204)
 
 12. Clicking logout will sign out of the site
 
-- Add the logout button to the navbar [] not done
-- Frontend javascript that will call logging out on the API [] not done
+- Add the logout button to the navbar [x] not done
+- Frontend javascript that will call logging out on the API [x] not done
 - Add a logout api route that will destroy a session [x] done
 
 13. When you're idle on the website for X amount of time

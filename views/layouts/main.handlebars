@@ -20,9 +20,13 @@
 
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link" href="#">Home</a>
-            <a class="nav-link" href="#">Dashboard</a>
-            <a class="nav-link" href="#">Log Out</a>
+            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link" href="/dashboard">Dashboard</a>
+            {{#if logged_in}}
+            <a class="nav-link" href="">Log Out</a>
+            {{else}}
+            <a class="nav-link" href="/login">Login</a>
+            {{/if}}
           </div>
         </div>
       </div>
@@ -30,5 +34,8 @@
     <div class="card col-12">
       {{{body}}}
     </div>
+    {{#if logged_in}}
+    <script src="../../public/js/logout.js"></script>
+    {{/if}}
   </body>
 </html>

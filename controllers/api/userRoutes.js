@@ -48,6 +48,10 @@ router.post("/login", async (req, res) => {
 
       res.status(204).end();
     });
+    return res.render("dashboard", {
+      ...user,
+      logged_in: true,
+    });
   } catch (error) {
     res.status(400).json(error);
   }

@@ -28,7 +28,7 @@ router.get("/login", (req, res) => {
     return;
   }
   //this was login dunno whether needs changing back
-  res.render("dashboard");
+  res.render("login");
 });
 
 module.exports = router;
