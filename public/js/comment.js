@@ -10,14 +10,19 @@ form on handlebars page to leave comment
 front end js to link it up
 */
 
-const postComment = async () => {
-  const response = await fetch("api/comments", {
+const postComment = async (event) => {
+  event.preventDefault();
+  const commentText = document.querySelector("#comment-text").value.trim();
+  var url = window.location.href;
+  //this gets the post id from the end of the url by finding the last / in the url
+  var postId = url.substring(url.lastIndexOf("/") + 1);
+  const response = await fetch("/api/comments", {
     method: "POST",
-    body: JSON.stringify(commentText),
+    body: JSON.stringify({ postId, commentText }),
     headers: { "Content-Type": "application/json" },
   });
   if (response.ok) {
-    document.location.replace("/comment");
+    // window.location.reload();
   }
 };
 

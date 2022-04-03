@@ -45,10 +45,9 @@ const newFormHandler = async (event) => {
 //   });
 //   if (response.ok) {
 //     document.location.replace("/posts");
-//     } else {
-//       alert("Failed to create blog post");
-//     }
-
+//   } else {
+//     alert("Failed to create blog post");
+//   }
 // };
 
 //deleting an existing blog post
@@ -76,4 +75,4 @@ document
   .querySelector(".post-list")
   .addEventListener("click", delButtonHandler);
 
-document.querySelector("#post-link").addEventListener("click", viewPost);
+// document.querySelector("#post-link").addEventListener("click", viewPost);

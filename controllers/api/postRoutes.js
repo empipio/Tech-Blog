@@ -23,8 +23,8 @@ router.put("/:id", withAuth, async (req, res) => {
   try {
     const updatePost = await Post.update(
       {
-        blog_title: req.body.blog_title,
-        blog_text: req.body.blog_text,
+        blogTitle: req.body.blogTitle,
+        blogText: req.body.blogText,
       },
       {
         where: {
@@ -35,30 +35,6 @@ router.put("/:id", withAuth, async (req, res) => {
     res.status(200).json(updatePost);
   } catch (error) {
     res.status(400).json(error);
-  }
-});
-
-//click on a blog post when logged in to read comments as well as post
-router.get("/:id", withAuth, async (req, res) => {
-  try {
-    const postData = await Post.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ["name"],
-        },
-        { model: Comment, attributes: ["user_id", "comment_text"] },
-      ],
-    });
-
-    const post = postData.get({ plain: true });
-
-    res.render("post", {
-      ...post,
-      logged_in: req.session.logged_in,
-    });
-  } catch (error) {
-    res.status(500).json(error);
   }
 });
 

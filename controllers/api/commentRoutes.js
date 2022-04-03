@@ -17,9 +17,9 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
-router.get("/:id", (req, res) => {
+router.get("/:id", async (req, res) => {
   try {
-    const commentData = Comment.findOne({
+    const commentData = await Comment.findOne({
       where: {
         id: req.params.id,
       },
@@ -41,11 +41,13 @@ router.post("/", withAuth, async (req, res) => {
     }
     const newComment = await Comment.create({
       commentText,
-      //post_id,
-      //user_id,
+      postId: parseInt(postId),
+      userId: parseInt(userId),
     });
+
     res.status(200).json(newComment);
   } catch (error) {
+    console.log(error);
     res.status(500).json(error);
   }
 });
