@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { User, Post, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
-//click on a blog post when logged in to read comments as well as post
+//click on a blog post when logged in to read comments as well as the post
 router.get("/posts/:id", withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {

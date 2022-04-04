@@ -32,14 +32,14 @@
 
 - Click on a post, see a post's author / date created etc
   - See mockup
-- Must be able to leave a comment if you're logged in [] not done
+- Must be able to leave a comment if you're logged in [x] not done
 
 8. Should be able to enter a comment on a post it should update
 
-- Comment save to the database [] not done
-- API route / handlers for adding a comment to a post [] done
-- Comment needs to be triggered from frontend js [] not done
-- Refetch / reload the page either through an api redirect or a window.location.reload [] not done
+- Comment save to the database [x] not done
+- API route / handlers for adding a comment to a post [x] done
+- Comment needs to be triggered from frontend js [x] not done
+- Refetch / reload the page either through an api redirect or a window.location.reload [x] not done
 
 9. Going to dashboard gets the logged in user's posts
 
@@ -49,14 +49,14 @@
 10. Clicking a new post - then you're prompted with the form
 
 - This is called via some html / js on the frontend to hit the api [x] done but review
-- Refetch / reload the page either through an api redirect or a window.location.reload [] not done
+- Refetch / reload the page either through an api redirect or a window.location.reload [x] not done
 
 11. Clicking on a post allows you to view the post
 
-- Need to create the html template to look at a post [] not done
+- Need to create the html template to look at a post [x] not done
   - Should allow you to edit the post [] not done
     - Need a PUT route for posts [x] donea
-  - Should allow you to delete the post [] not done
+  - Should allow you to delete the post [x] not done
     - Need a DELETE route for the posts [x] done
       - Maybe double check the user is the owner of the post? [] not done (maybe not required)
 

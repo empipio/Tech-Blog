@@ -1,3 +1,4 @@
+//frontend js to log user in
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
@@ -7,7 +8,6 @@ const loginFormHandler = async (event) => {
 
   if (email && password) {
     // Send a POST request to the API endpoint
-    //double check end point
     const response = await fetch("/api/users/login", {
       method: "POST",
       body: JSON.stringify({ email, password }),
@@ -23,6 +23,7 @@ const loginFormHandler = async (event) => {
   }
 };
 
+//frontend js to sign up a new user
 const signupFormHandler = async (event) => {
   event.preventDefault();
 

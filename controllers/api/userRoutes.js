@@ -4,6 +4,7 @@ const { User } = require("../../models");
 //ENDPOINT api/users
 
 //get all users
+//no frontend js for this, used during development when checking user routes in insomnia
 router.get("/", async (req, res) => {
   try {
     const userData = await User.findAll({
@@ -38,7 +39,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-//user login
+//LOGIN
 router.post("/login", async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -66,15 +67,13 @@ router.post("/login", async (req, res) => {
       req.session.logged_in = true;
 
       res.status(204).end();
-      // if (req.session.logged_in) {
-      //   return res.redirect("/dashboard");
-      // }
     });
   } catch (error) {
     res.status(400).json(error);
   }
 });
 
+//LOGOUT
 router.post("/logout", (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {

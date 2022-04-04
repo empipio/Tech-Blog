@@ -19,6 +19,7 @@ router.post("/", withAuth, async (req, res) => {
 });
 
 //update post
+//@TODO: no frontend JS or html template for this
 router.put("/:id", withAuth, async (req, res) => {
   try {
     const updatePost = await Post.update(
@@ -38,7 +39,7 @@ router.put("/:id", withAuth, async (req, res) => {
   }
 });
 
-//only want to be able to delete own posts, think this may allow any to be deleted as long as logged in
+//delete post
 router.delete("/:id", withAuth, async (req, res) => {
   try {
     const postData = await Post.destroy({

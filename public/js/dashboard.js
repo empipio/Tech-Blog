@@ -13,13 +13,13 @@ const getPosts = async () => {
   }
 };
 
+//adding a new blog post
 const newFormHandler = async (event) => {
   event.preventDefault();
 
   const blogTitle = document.querySelector("#blog-name").value.trim();
   const blogText = document.querySelector("#blog-text").value.trim();
 
-  //adding a new blog post
   if (blogTitle && blogText) {
     const response = await fetch(`/api/posts`, {
       method: "POST",
@@ -36,19 +36,6 @@ const newFormHandler = async (event) => {
     }
   }
 };
-
-// const viewPost = async () => {
-//   const response = await fetch("api/posts/:id", {
-//     method: "GET",
-//     body: JSON.stringify(req.body),
-//     headers: { "Content-Type": "application/json" },
-//   });
-//   if (response.ok) {
-//     document.location.replace("/posts");
-//   } else {
-//     alert("Failed to create blog post");
-//   }
-// };
 
 //deleting an existing blog post
 const delButtonHandler = async (event) => {
@@ -74,5 +61,3 @@ document
 document
   .querySelector(".post-list")
   .addEventListener("click", delButtonHandler);
-
-// document.querySelector("#post-link").addEventListener("click", viewPost);

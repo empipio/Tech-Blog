@@ -13,7 +13,6 @@ router.get("/", async (req, res) => {
     const posts = postData.map((post) => post.get({ plain: true }));
     res.render("homepage", {
       posts,
-      //do they need to be logged_in?
     });
   } catch (error) {
     res.status(500).json(error);

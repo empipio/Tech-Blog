@@ -1,15 +1,4 @@
-/* 
-click on post
-taken to new page
-given option of form to fill out if want to leave a comment
-
-get post by id
-render to new handlebars page
-form on handlebars page to leave comment
-
-front end js to link it up
-*/
-
+//post a new comment on existing blog post
 const postComment = async (event) => {
   event.preventDefault();
   const commentText = document.querySelector("#comment-text").value.trim();
@@ -22,7 +11,7 @@ const postComment = async (event) => {
     headers: { "Content-Type": "application/json" },
   });
   if (response.ok) {
-    // window.location.reload();
+    window.location.reload();
   }
 };
 

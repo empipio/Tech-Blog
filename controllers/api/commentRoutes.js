@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { Comment, Post, User } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-//api/comments
+//ENDPOINT api/comments
 
 //get all comments
 router.get("/", withAuth, async (req, res) => {
@@ -17,6 +17,7 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
+//get a single comment by its ID
 router.get("/:id", async (req, res) => {
   try {
     const commentData = await Comment.findOne({
@@ -32,6 +33,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+//create a new comment for an existing post
 router.post("/", withAuth, async (req, res) => {
   try {
     const userId = req.session.user_id;
