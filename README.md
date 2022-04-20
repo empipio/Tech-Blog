@@ -60,3 +60,7 @@ THEN I am able to view comments but I am prompted to log in again before I can a
 ![screenshot of app homepage displaying blog posts](/public/images/screenshot.png)
 
 The link to the deployed application is available here: https://tech-blog-empipio.herokuapp.com/
+
+Licence: MIT
+
+Contact me: emckibben@hotmail.co.uk
